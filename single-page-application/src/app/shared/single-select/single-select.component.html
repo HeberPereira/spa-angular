@@ -1,0 +1,17 @@
+<div class="content" #componentScope>
+  <div class="select" data-type="single" [id]="selectID" >
+    <button [disabled]="isDisabled" class="btn current-options" (click)="setPositionSelectList($event)">
+      Select {{ resourceName }}
+    </button>
+    <div class="options-list">
+      <div
+        *ngFor="let option of data"
+        class="item"
+        [id]="option[key]"
+        (click)="setSelectedOptions(option[key])"
+      >
+        {{ option[label] }}
+      </div>
+    </div>
+  </div>
+</div>

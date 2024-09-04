@@ -1,0 +1,19 @@
+<div id="filterTile" class="row">
+  <div class="column sm-12 md-12 lg-6">
+    <label for="filter">Filter</label>
+    <input type="text" class="with-icon fullwidth" placeholder="Type to filter..." id="filter"
+      (keyup)="onFilter($event)" />
+  </div>
+  <div class="column sm-12 md-12 lg-6">
+    <label for="columnsToFilter">Filter by Columns
+      <span class="tooltip">
+        <i class="icon icon-info"></i>
+        <span class="message top">The filter only apply for the selected columns. If none column is
+          selected, the filter apply to all columns.</span>
+      </span>
+    </label>
+    <div class="filter-select" app-multi-select #fieldSelect [resourceName]="' columns (All by default)'"
+      [key]="'key'" [label]="'title'" [selectType]="'multi-pills'" [data]="fieldsAvaliable" (onClick)="this.onSelectField($event)">
+    </div>
+  </div>
+</div>

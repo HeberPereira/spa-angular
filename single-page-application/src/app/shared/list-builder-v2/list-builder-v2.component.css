@@ -1,0 +1,9 @@
+.left, .right{
+    max-width: none !important;
+    width: 47.5% !important;
+}
+.center{
+    max-width: 80px !important;
+    width: 5% !important;
+    min-width: 80px !important;
+}

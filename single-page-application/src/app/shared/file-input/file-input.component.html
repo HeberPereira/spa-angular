@@ -1,0 +1,11 @@
+<div class="row customFileInput" [id]="fileInputComponent">
+  <label>
+    <input [id]="fileButton" type="file" multiple [accept]="accept" #inputFileComp *ngIf="this.selectMode == 'multiple'"/>
+    <input [id]="fileButton" type="file" [accept]="accept" #inputFileComp *ngIf="this.selectMode == 'single'"/>
+    <span class="btn">
+      <i class="icon icon-upload"></i>
+      Choose file
+    </span>
+  </label>
+  <span id="fileName"><i class="icon icon-cross removeFileIcon"></i></span>
+</div>

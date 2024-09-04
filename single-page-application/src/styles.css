@@ -1,0 +1,635 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* FORM VALIDATION */
+/* LIGHT */
+.light input.ng-validation+.ng-validation-msg p,
+.light input.ng-validation+.suffix+.ng-validation-msg p,
+.light textarea.ng-validation+.ng-validation-msg p,
+.light textarea.ng-validation+.suffix+.ng-validation-msg p {
+  display: none;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.light input.ng-validation.ng-invalid.ng-touched,
+.light textarea.ng-validation.ng-invalid.ng-touched {
+  border: 1px solid #bb0b02;
+  margin-bottom: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.light input.ng-validation.ng-invalid.ng-touched+.ng-validation-msg p,
+.light input.ng-validation.ng-invalid.ng-touched+.suffix+.ng-validation-msg p,
+.light textarea.ng-validation.ng-invalid.ng-touched+.ng-validation-msg p,
+.light textarea.ng-validation.ng-invalid.ng-touched+.suffix+.ng-validation-msg p {
+  display: block;
+}
+
+.light input.ng-validation.ng-invalid+.ng-validation-msg p::before,
+.light input.ng-validation.ng-invalid+.suffix+.ng-validation-msg p::before,
+.light textarea.ng-validation.ng-invalid+.ng-validation-msg p::before,
+.light textarea.ng-validation.ng-invalid+.suffix+.ng-validation-msg p::before {
+  content: '\e9b2';
+  font-family: 'Ericsson Icons';
+  display: inline;
+  margin-right: 4px;
+  color: #bb0b02;
+}
+
+.light input.ng-validation.ng-valid,
+.light textarea.ng-validation.ng-valid {
+  border: 1px solid #329864;
+  margin-bottom: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.light input.ng-validation.ng-invalid,
+.light textarea.ng-validation.ng-invalid {
+  margin-bottom: 4px;
+}
+
+.light input.ng-validation.ng-valid+.ng-validation-msg p,
+.light input.ng-validation.ng-valid+.suffix+.ng-validation-msg p,
+.light textarea.ng-validation.ng-valid+.ng-validation-msg p,
+.light textarea.ng-validation.ng-valid+.suffix+.ng-validation-msg p {
+  display: block;
+}
+
+.light input.ng-validation.ng-valid+.ng-validation-msg p::before,
+.light input.ng-validation.ng-valid+.suffix+.ng-validation-msg p::before,
+.light textarea.ng-validation.ng-valid+.ng-validation-msg p::before,
+.light textarea.ng-validation.ng-valid+.suffix+.ng-validation-msg p::before {
+  content: '\e921';
+  font-family: 'Ericsson Icons';
+  display: inline;
+  margin-right: 4px;
+  color: #329864;
+}
+
+.light input.ng-invalid.ng-touched,
+.light textarea.ng-invalid.ng-touched {
+  border: 1px solid #bb0b02;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* DARK */
+.dark input.ng-validation+.ng-validation-msg p,
+.dark input.ng-validation+.suffix+.ng-validation-msg p,
+.dark textarea.ng-validation+.ng-validation-msg p,
+.dark textarea.ng-validation+.suffix+.ng-validation-msg p {
+  display: none;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.dark input.ng-validation.ng-invalid.ng-touched,
+.dark textarea.ng-validation.ng-invalid.ng-touched {
+  border: 1px solid #dc2d37;
+  margin-bottom: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark input.ng-validation.ng-invalid.ng-touched+.ng-validation-msg p,
+.dark input.ng-validation.ng-invalid.ng-touched+.suffix+.ng-validation-msg p,
+.dark textarea.ng-validation.ng-invalid.ng-touched+.ng-validation-msg p,
+.dark textarea.ng-validation.ng-invalid.ng-touched+.suffix+.ng-validation-msg p {
+  display: block;
+}
+
+.dark input.ng-validation.ng-invalid+.ng-validation-msg p::before,
+.dark input.ng-validation.ng-invalid+.suffix+.ng-validation-msg p::before,
+.dark textarea.ng-validation.ng-invalid+.ng-validation-msg p::before,
+.dark textarea.ng-validation.ng-invalid+.suffix+.ng-validation-msg p::before {
+  content: '\e9b2';
+  font-family: 'Ericsson Icons';
+  display: inline;
+  margin-right: 4px;
+  color: #dc2d37;
+}
+
+.dark input.ng-validation.ng-valid,
+.dark textarea.ng-validation.ng-valid {
+  border: 1px solid #288964;
+  margin-bottom: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark input.ng-validation.ng-invalid,
+.dark textarea.ng-validation.ng-invalid {
+  margin-bottom: 4px;
+}
+
+.dark input.ng-validation.ng-valid+.ng-validation-msg p,
+.dark input.ng-validation.ng-valid+.suffix+.ng-validation-msg p,
+.dark textarea.ng-validation.ng-valid+.ng-validation-msg p,
+.dark textarea.ng-validation.ng-valid+.suffix+.ng-validation-msg p {
+  display: block;
+}
+
+.dark input.ng-validation.ng-valid+.ng-validation-msg p::before,
+.dark input.ng-validation.ng-valid+.suffix+.ng-validation-msg p::before,
+.dark textarea.ng-validation.ng-valid+.ng-validation-msg p::before,
+.dark textarea.ng-validation.ng-valid+.suffix+.ng-validation-msg p::before {
+  content: '\e921';
+  font-family: 'Ericsson Icons';
+  display: inline;
+  margin-right: 4px;
+  color: #288964;
+}
+
+.dark input.ng-invalid.ng-touched,
+.dark textarea.ng-invalid.ng-touched {
+  border: 1px solid #dc2d37;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.light .tile .header .left .title,
+.dark .tile .header .left .title {
+  font-size: 20px;
+}
+
+.light .notification,
+.dark .notification {
+  z-index: 101;
+}
+
+.appcontent {
+  overflow-x: hidden;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.p-base {
+  padding: 8px;
+}
+
+.py-base {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pl-xl {
+  padding-left: 24px;
+}
+
+.m-base {
+  margin: 8px;
+}
+
+.ml-xxl {
+  margin-left: 32px;
+}
+
+.ml-base {
+  margin-left: 8px;
+}
+
+.mr-base {
+  margin-right: 8px;
+}
+
+.mr-large {
+  margin-right: 16px;
+}
+
+.mb-base {
+  margin-bottom: 8px;
+}
+
+.mb-large {
+  margin-bottom: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tooltip .message li {
+  margin-left: 15px;
+}
+
+.light .eds-form .form-header,
+.dark .eds-form .form-header {
+  max-width: 834px;
+  margin: 0 auto 32px;
+}
+
+.form-footer-sticky {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 0;
+  margin-top: -16px;
+}
+
+.light .form-footer-sticky {
+  background: #fafafa;
+}
+
+.dark .form-footer-sticky {
+  background: #242424;
+}
+
+.light .eds-form label,
+.dark .eds-form label {
+  max-width: 114px;
+}
+
+.dark .dialog>.content,
+.light .dialog>.content {
+  overflow-y: auto;
+}
+
+.dark .table-top,
+.light .table-top {
+  min-height: 32px;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.opaque {
+  opacity: 0.6;
+}
+
+.width-200 {
+  width: 200px;
+}
+
+.light .tooltip-btn,
+.light .tooltip-btn~.btn,
+.dark .tooltip-btn,
+.dark .tooltip-btn~.btn {
+  margin-left: 8px;
+}
+
+/* HOME PAGE */
+.home{
+  height: 100%;
+}
+.home .brand {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  z-index: 100;
+  margin-bottom: -13px;
+  padding: 90px;
+}
+
+.home .brand .brand-title {
+  font-size: 6rem;
+  line-height: 115%;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.home .brand .brand-title .icon {
+  margin: 15px;
+}
+
+.home .brand .brand-description {
+  font-size: 1.3rem;
+  font-weight: 100;
+  max-width: 900px;
+  margin-bottom: 20px;
+  color: #fff;
+  display: inline-block;
+}
+
+.home .brand-buttons .btn {
+  color: #fff;
+  border-color: #fff;
+  margin: 8px 8px 0 0;
+  display: inline-block;
+}
+
+.home .brand-buttons .btn:hover {
+  background: #fff;
+  color: #1174e6;
+  border-color: #fff;
+}
+
+.light .home .brand {
+  background-color: darkslategray;
+  height: 100%;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dark .home .brand {
+  background-color: darkslategray;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home .brand {
+    padding: 60px;
+  }
+
+  .home .brand .brand-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .home .brand .brand-title {
+    word-spacing: 930px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .home .brand {
+    padding: 30px;
+  }
+
+  .home .brand .brand-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* RELEASE NOTES */
+
+.home .release-notes {
+  text-align: justify;
+}
+
+.home .release-notes ul {
+  margin-bottom: 0;
+}
+
+.home .release-notes .header {
+  padding-top: 24px;
+  padding-bottom: 0px;
+}
+
+.light .section {
+  color: #6a6a6a;
+}
+
+.dark .section {
+  color: #8b8b8b;
+}
+
+.home .release-notes .section {
+  padding-top: 20px;
+}
+
+.home .release-notes .feature:first-child .section {
+  padding-top: 8px;
+}
+
+kbd {
+  font-family: 'Ericsson Hilda Mono', Consolas, Menlo, Courier, monospace;
+  padding: 2px 5px;
+  font-size: 12px;
+  margin: 0;
+  border-radius: 3px;
+  opacity: 1;
+  color: #fff;
+}
+
+.light kbd.new {
+  background: #329864;
+}
+
+.dark kbd.new {
+  background: #288964;
+}
+
+.light kbd.updated {
+  background: #1174e6;
+}
+
+.dark kbd.updated {
+  background: #0077db;
+}
+
+kbd.bugfix {
+  background: #a08209;
+}
+
+.form-element .color-red {
+  margin-top: 4px;
+}
+
+.input-suffix {
+  display: grid;
+  grid-template-columns: 1fr 28px;
+  column-gap: 8px;
+}
+
+.input-suffix .suffix.pointer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .suffix,
+.light .suffix {
+  margin-bottom: 4px;
+}
+
+.dark .eds-form .ranger-container[type='password'],
+.dark .eds-form .select[type='password'],
+.dark .eds-form input[type='password'],
+.dark .eds-form textarea[type='password'] .light .eds-form .ranger-container[type='password'],
+.light .eds-form .select[type='password'],
+.light .eds-form input[type='password'],
+.light .eds-form textarea[type='password'] {
+  max-width: none;
+}
+
+.light .designSummary .title {
+  background-color: #dcdcdc;
+}
+
+.dark .designSummary .title {
+  background-color: #4e4e4e;
+}
+
+.designSummary .tabs .titles .title {
+  padding: 10px 25px;
+}
+
+.light .designSummary .table tr td {
+  background-color: #fafafa;
+  border-color: #242424;
+  color: #242424;
+  padding: 8px 16px;
+}
+
+.dark .designSummary .table tr td {
+  border-color: #fafafa;
+  padding: 8px 16px;
+}
+
+.dark .designSummary .table tbody>tr:hover {
+  background-color: #242424;
+}
+
+.dark .designSummary table,
+.light .designSummary table {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.dark .designSummary table tbody,
+.light .designSummary table tbody {
+  display: table;
+  width: 100%;
+}
+
+.light .designSummary table::after,
+.dark .designSummary table::after {
+  background: none;
+}
+
+.light .accordion.designSummary .accordion-item:focus,
+.dark .accordion.designSummary .accordion-item:focus {
+  outline: none;
+}
+
+.light .designSummary .tabs .titles .title:focus,
+.dark .designSummary .tabs .titles .title:focus {
+  outline: none;
+}
+
+.light .accordion .accordion-item>.content,
+.dark .accordion .accordion-item>.content {
+  padding: 16px 24px;
+}
+
+.light .tooltip-btn.btn,
+.dark .tooltip-btn.btn {
+  padding: 0;
+  border: none;
+}
+
+.light .tooltip-btn.btn:hover,
+.dark .tooltip-btn.btn:hover {
+  border: none;
+}
+
+/* Tree */
+.light .treeComponent li ul.tree-flex,
+.dark .treeComponent li ul.tree-flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.dark .treeComponent li ul.tree-flex li:first-child,
+.light .treeComponent li ul.tree-flex li:first-child {
+  margin-left: 24px;
+}
+
+.light .treeComponent p,
+.dark .treeComponent p {
+  margin-bottom: 4px;
+}
+
+.light .treeComponent li>*:not(ul),
+.dark .treeComponent li>*:not(ul) {
+  padding-left: 24px;
+}
+
+.light .eds-form .tree.treeComponent.treeCceGroup label,
+.dark .eds-form .tree.treeComponent.treeCceGroup label {
+  max-width: none;
+}
+
+.light .title.closed.item,
+.dark .title.closed.item {
+  outline: none;
+}
+
+.light #userDataCEMFormDialog .eds-form p,
+.dark #userDataCEMFormDialog .eds-form p {
+  margin-bottom: 0;
+}
+
+.light .eds-form label,
+.dark .eds-form label {
+  max-width: none;
+}
+
+.light .eds-form .customFileInput label,
+.dark .eds-form .customFileInput label {
+  max-width: 114px;
+}
+
+.tree.navigation {
+  overflow-x: hidden;
+}
+
+.light .btn:hover:not(:disabled).tooltip-btn,
+.dark .btn:hover:not(:disabled).tooltip-btn {
+  background-color: transparent;
+}
+
+.light .navigation .item,
+.dark .navigation .item {
+  display: flex;
+  align-items: flex-end;
+}
+
+.light .navigation .item .icon,
+.dark .navigation .item .icon {
+  padding-bottom: 2px;
+}
+
+input[disabled] {
+  margin-bottom: 4px;
+}
+
+.fa-xmark,
+.fa-bell,
+.fa-trash,
+.fa-gear,
+.fa-people-roof,
+.fa-signature-lock,
+.fa-sliders,
+.fa-signature,
+.fa-users,
+.fa-gear {
+  margin: 0px 10px;
+  opacity: .8;
+}
+
+.fa-xmark:hover,
+.fa-bell:hover,
+.fa-trash,
+.fa-gear,
+.fa-people-roof,
+.fa-signature-lock,
+.fa-sliders,
+.fa-signature,
+.fa-users,
+.fa-gear {
+  opacity: 1;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-expansion-panel-body{
+  padding: 0px !important;
+}

@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="top">
+    <div class="title">{{ title }}</div>
+  </div>
+  <div class="body">
+    <p>{{ description }}</p>
+    <ng-content>
+      
+    </ng-content>
+  </div>
+  <div class="bottom">
+    <button id="deleteButton" (click)="clickDelete()" data-close="true" class="btn warning">
+      {{ actionText }}
+    </button>
+    <button class="btn" data-close="true" (click)="clickCancel()">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<header class="sysbar">
+  <div class="items-container">
+    <div class="item" [routerLink]="['/']">
+      <i class="icon"> <img width="36" src="../../../favicon.ico"></i>
+      <span class="product">Niteo Solution</span>
+      <span class="acronym">NS 1.0</span>
+    </div>
+  </div>
+  <div class="items-container">
+    <div class="item hover">
+      <a [routerLink]="['/']"></a>
+    </div>
+    <div class="item notification-log-trigger" (click)="toogleSysPanelNotification()">
+      <span class="notification-log-number"></span>
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="item hover settings-trigger" (click)="toogleSysPanelSettings()">
+      <i class="fa-regular fa-user"></i>
+      <span>{{ username }}</span>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,97 @@
+<ng-content></ng-content>
+<!-- <app-filter [tableColumns]="tableColumns" *ngIf="hideFilter != 'Y'" (onFilterEmitter)="onFilter($event)"></app-filter> -->
+<div
+  (deleteButtonClicked)="deleteTableRow($event)"
+  (editButtonClicked)="editButtonClicked($event)"
+  (addButtonClicked)="addButtonClicked()"
+  (paginationChanged)="paginationChange($event)"
+  (numPerPageChanged)="numPerPageChanged($event)"
+  (editedCellEmitter)="editedCell($event)"
+  [data]="data"
+  [tableColumns]="tableColumns"
+  [subtableColumns]="subtableColumns"
+  [paginationObj]="dataSourceList.pagination"
+  [totalRecords]="totalRecords"
+  [selectable]="selectable"
+  [expandable]="expandable"
+  [propertySubData]="propertySubData"
+  [MessageEmptyRows]="MessageEmptyRows"
+  [ReplaceBooleanToIcon]="ReplaceBooleanToIcon"
+  [EnabledPagination]="EnabledPagination"
+  [DescriptionSubTable]="DescriptionSubTable"
+  [id]="id"
+  app-table
+  #tableComponent
+  class="content"
+>
+
+  <div tableButtons class="table-buttons">
+    <ng-container *ngFor="let addBtn of additionalButtons">
+      <!--standalone button-->
+      <span *ngIf="!addBtn.childrenActions"
+        [hidden]="isVisible(addBtn.actionType)"
+        class="tooltip tooltip-btn btn">
+        <button
+          (click)="addBtn.fn(tableComponent.table.selected); informDataOutput(tableComponent.table.selected)"
+          [disabled]="addBtn.disabled(tableComponent.table?.selected || [])"
+          class="btn">
+          <i class="icon {{ addBtn.icon }}"></i> {{ addBtn.title }}
+        </button>
+        <span *ngIf="addBtn.disabled(tableComponent.table?.selected || [])"
+              class="message left">{{ addBtn.disabledTooltip }}</span>
+        <span *ngIf="!addBtn.disabled(tableComponent.table?.selected || []) && addBtn.tooltip"
+            class="message left">{{ addBtn.tooltip }}</span>
+      </span>
+
+      <div class="dropdown" data-type="click" *ngIf="addBtn.childrenActions" id="ddl{{id}}">
+        <button class="btn clickable"  [disabled]="isVisible(addBtn.actionType)"><i class="icon {{ addBtn.icon }}"></i> {{ addBtn.title }}</button>
+        <div class="menu">
+          <div class="item" *ngFor="let child of addBtn.childrenActions"
+                (click)="child.fn(tableComponent.table.selected); informDataOutput(tableComponent.table.selected)"
+                [disabled]="child.disabled(tableComponent.table?.selected || [])"
+                [hidden]="isVisible(child.actionType)">
+            {{ child.title }}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    
+    <button
+      *ngIf="!removedButtons?.includes('delete')"
+      id="{{this.id}}-deleteConfirmationButton"
+      class="btn">
+      <i class="icon icon-cross"></i> Delete
+    </button>      
+    <button
+      *ngIf="!removedButtons?.includes('edit')"
+      #btn
+      id="{{this.id}}-editButton"
+      class="btn">
+      <i class="icon {{editBtnCustomIconName ? editBtnCustomIconName : 'icon-edit'}}"></i>{{editBtnCustomName ? editBtnCustomName: 'Edit'}}
+    </button>
+    <button
+      *ngIf="!removedButtons?.includes('add')"
+      [disabled]="!data"
+      id="{{this.id}}-addButton" 
+      class="btn primary">
+      <i class="icon icon-plus"></i> Add <!--a new {{ this.resourceName }}-->
+    </button>
+  </div>
+</div>
+
+<!-- Confirmation Dialog -->
+<div
+  *ngIf="!removedButtons?.includes('delete')"
+  [title]="'Delete ' + this.resourceName"
+  [description]="
+    'Are you sure you want to delete the selected ' +
+    this.resourceName +
+    '(s)? You can\'t undo this.'
+  "
+  [actionText]="'Delete'"
+  app-confirmation-dialog
+  class="dialog"
+  data-type="simple"
+  [attr.data-trigger]="'#'+ this.id + '-deleteConfirmationButton'"
+  id="{{this.id}}-deleteConfirmationDialog"
+></div>

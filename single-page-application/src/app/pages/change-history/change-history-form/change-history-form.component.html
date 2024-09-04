@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off" class="eds-form">
+  <div class="form-header">
+<div class="title">
+  {{ changeHistoryForm.get('id').value ? 'Edit Cluster' : 'Add a new Cluster' }}
+</div>
+</div>
+<div class="form-body">
+
+</div>
+<div class="form-footer">
+<button
+  (click)="onSubmit()"
+  class="btn ghost"
+  type="button"
+  data-close="true"
+>
+  Cancel
+</button>
+<button class="btn primary" type="submit">
+  Save
+</button>
+</div>
+</form>

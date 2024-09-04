@@ -1,0 +1,10 @@
+.select {
+    width: 100%;
+    max-width: 100%;
+}
+
+.options-list{
+    position: fixed !important;
+    max-width: 200px;
+    
+}

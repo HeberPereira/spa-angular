@@ -1,0 +1,118 @@
+<div class="wizard">
+  <!-- Steps -->
+  <div class="wizard-steps">
+    <div class="arrow left">
+      <i class="icon icon-arrow-left"></i>
+    </div>
+
+    <div class="steps">
+      <div class="step current">
+        <div class="prevbar"></div>
+        <div class="nextbar"></div>
+        <div class="sphere"></div>
+        <div class="description">1. General Information</div>
+      </div>
+
+      <div class="step">
+        <div class="prevbar"></div>
+        <div class="nextbar"></div>
+        <div class="sphere"></div>
+        <div class="description">2. Permissions</div>
+      </div>
+    </div>
+    
+    <div class="arrow right visible">
+      <i class="icon icon-arrow-right"></i>
+    </div>
+  </div>
+
+  <div class="wizard-content">
+    <!-- Content step 1 -->
+    <div class="content">
+      <div class="title">General Informations</div>
+      <div class="subtitle">
+        Step <span class="current">1</span> of <span class="total">2</span>
+      </div>
+
+      <div class="row">          
+        <div class="eds-form">
+          <div class="row form-body" [formGroup]="profileForm">
+            <!--left-->
+            <div class="column sm-12 md-12 lg-12">
+              <div class="form-element">
+                <label class="required" for="name">Name</label>
+                <input name="name" type="text" id="name" class="ng-validation" formControlName="name" [maxlength]="maxLength" />
+                <app-input-validations [control]="profileForm.get('name')"></app-input-validations>
+              </div>
+        
+              <div class="form-element">
+                <label class="required" for="description">Description</label>
+                <input name="description" type="text" id="description" class="ng-validation" formControlName="description" [maxlength]="maxLength" />
+                <app-input-validations [control]="profileForm.get('description')"></app-input-validations>
+              </div>
+        
+              <div class="form-element">
+                <label  class="required" for="idmRole">IDM Role</label>
+                <input formControlName="idmRole" type="text" id="idmRole" class="ng-validation" [maxlength]="maxLength" name="idmRole" />
+                <app-input-validations [control]="profileForm.get('idmRole')"></app-input-validations>
+              </div>
+        
+              <div class="form-element">
+                <label  class="required" for="adGroupId">AD Group Id</label>
+                <input formControlName="adGroupId" type="text" id="adGroupId" class="ng-validation" [maxlength]="maxLength" name="adGroupId" />
+                <app-input-validations [control]="profileForm.get('adGroupId')"></app-input-validations>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content step 2 -->
+    <div class="content hidden">
+      <div class="title">Permissions</div>
+      <div class="subtitle">
+        Step <span class="current">2</span> of <span class="total">2</span>
+      </div>
+
+      <div class="row">
+        <div class="column sm-12 md-12 lg-12">
+          <app-list-builder-v2 [resourceName]="'Permissions'" #listaPermissions></app-list-builder-v2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--saving-->
+  <div class="wizard-content-submit-feedback hidden">
+    <div class="loading large"></div>
+  </div>
+  
+  <div class="wizard-footer">
+    <div class="item">
+      <button (click)="cancel()" class="btn ghost" type="button" data-close="true">
+          Cancel
+      </button>
+    </div>
+
+    <div class="item">
+      <button class="btn wizard-previous" id="wizard-previous">
+        <i class="icon icon-arrow-left"></i>
+        <span class="term">Previous</span>
+      </button>
+
+      <button class="btn primary wizard-next" id="wizard-next" [disabled]="!profileForm.valid">
+        <span class="term">Next</span>
+        <i class="icon icon-arrow-right"></i>
+      </button> 
+        
+      <button class="btn primary hidden wizard-finish" id="wizard-finish" [disabled]="!profileForm.valid" (click)="onSubmit()">
+        Finish
+      </button>
+
+      <button class="btn primary hidden wizard-finished" id="wizard-finished">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

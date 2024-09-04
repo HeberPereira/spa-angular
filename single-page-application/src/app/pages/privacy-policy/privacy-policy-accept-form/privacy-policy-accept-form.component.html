@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off" class="eds-form" [formGroup]="privacyPolicyAcceptForm">
+  <div class="form-header">
+    <div class="title">
+      Acceptance terms
+    </div>
+  </div>
+  
+  <div class="form-body">
+    <div class="form-element">
+      <label>{{privacyPolicyObj.conditions}}</label>     
+    </div>    
+  </div>
+
+  <div class="form-footer form-footer-sticky">
+    <button class="btn primary" type="submit" >
+      Accept
+    </button>
+  </div>
+</form>

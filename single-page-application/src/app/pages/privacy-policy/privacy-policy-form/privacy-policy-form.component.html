@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off" class="eds-form" [formGroup]="privacyPolicyForm">
+  <div class="form-header">
+    <div class="title">
+      {{ privacyPolicyForm.get('id').value ? 'Edit Privacy Policy' : 'Add a new Privacy Policy' }}
+    </div>
+  </div>
+  
+  <div class="form-body">
+    <div class="form-element">
+      <label class="required">Privacy Policy Status</label>
+      <div app-single-select [resourceName]="'Privacy Policy Status'" [control]="privacyPolicyForm.get('privacyPolicyStatus')" [key]="'privacyPolicyStatus'"
+        [label]="'name'" [selectType]="'single'" [data]="privacyPolicyStatus" 
+        ></div>
+    </div>
+    
+    <div class="form-element">
+      <label class="required" for="name">Conditions</label>
+      <textarea formControlName="conditions" name="conditions" rows="15" type="text" id="conditions" class="ng-validation">
+      </textarea>  
+      <app-input-validations [control]="privacyPolicyForm.get('conditions')"></app-input-validations>
+    </div>    
+  </div>
+
+  <div class="form-footer form-footer-sticky">
+    <button class="btn ghost" data-close="true" type="button" (click)="cancel()">
+      Cancel
+    </button>
+
+    <button class="btn primary" type="submit" [disabled]="!privacyPolicyForm.valid">
+     Save
+    </button>
+  </div>
+</form>

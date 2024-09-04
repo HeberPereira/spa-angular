@@ -1,0 +1,25 @@
+.simple-modal-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simple-modal-content {
+    padding: 16px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-width: 340px;
+    min-height: 144px;
+    max-width: 50%;
+    max-height: 90%;
+    margin: 0 4px;
+    white-space: pre-line;
+    overflow: auto;
+}

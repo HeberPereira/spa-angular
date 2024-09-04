@@ -1,0 +1,21 @@
+.customFileInput {
+  align-items: center;
+  gap: 8px;
+}
+
+.customFileInput #fileName {
+  display: none;
+}
+
+.customFileInput #fileName.fileSelected {
+  display: flex;
+  align-items: center;
+}
+
+.customFileInput #fileName i {
+  margin-right: 4px;
+}
+
+.removeFileIcon {
+  cursor: pointer;
+}

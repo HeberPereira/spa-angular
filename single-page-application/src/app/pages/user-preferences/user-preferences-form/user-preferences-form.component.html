@@ -1,0 +1,49 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off" class="eds-form">
+    <div class="form-body">
+        <div class="form-group">
+            <div class="loadForm">
+                <div class="mid-panel">
+                    <table class="table table-responsive table-full">
+                        <thead>
+                            <tr>
+                                <!-- <th>Id</th> -->
+                                <th>Preferences</th>
+                                <th>Activated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of this.userPreference">
+                                <!-- <td>
+                                    {{item.id}}
+                                </td> -->
+                                <td>
+                                    {{item.name}}
+                                </td>
+                                <td>
+                                    <div class="form-element">
+                                        <label>Enabled</label>
+                                        <label class="switch">
+                                            <input type="checkbox" [checked]="item.active" [id]="'chk_' + item.preferenceId"
+                                                (click)="disablePreference(item.preferenceId, $event)" />
+                                            <i class="ball"></i>
+                                            <span data-disabled="No" data-enabled="Yes" data-type="checkbox"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-footer">
+
+        <button class="btn primary" type="submit">
+            Save
+        </button>
+    </div>
+</form>

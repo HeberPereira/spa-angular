@@ -1,0 +1,35 @@
+<!-- System bar -->
+<app-sysbar></app-sysbar>
+
+<main>
+  <!-- System panel -->
+  <app-syspanel style="display: contents"></app-syspanel>
+
+  <!-- Application -->
+  <div class="app" id="app">
+    <nav class="appbar">
+      <div class="actions-left" (click)="toggleMenu(drawer)">
+        <div class="item">
+          <i class="fa-solid fa-bars" style="display:none"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="menu-anchor open-menu" >Menu</div>
+        <div class="title open-menu">
+          <div class="breadcrumb"> <router-outlet></router-outlet></div>
+        </div>
+      </div>
+    </nav>
+   
+    <mat-drawer-container class="master-container" >
+      <mat-drawer #drawer class="master-sidenav" mode="side" opened>
+        <app-nav style="display: contents"></app-nav>
+      </mat-drawer>
+      <mat-drawer-content>
+        
+        <div class="appbody">
+          <app-content style="display: contents"></app-content>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+</main>

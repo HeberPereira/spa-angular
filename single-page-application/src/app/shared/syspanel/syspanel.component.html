@@ -1,0 +1,67 @@
+<!-- System panel -->
+<aside class="syspanel hidden">
+  <!-- System panel: Settings -->
+  <div class="settings hidden">
+    <div class="syspanel-top">
+      <span class="syspanel-title"></span>
+      <i class="fa-solid fa-xmark" (click)="toogleSysPanel()"></i>
+    </div>
+    <div class="row">
+      <div class="column sm-12 container">
+        <div class="profile">
+          <i class="fa-regular fa-circle-user"></i>
+          <div class="username">
+            {{ name }}
+            <br/>
+            <small>{{ username }}</small>
+          </div>
+        </div>
+        <div class="content">
+          <div class="title">Settings</div>
+          <!-- <div class="item">
+            <div class="left">Theme</div>
+            <div class="right">
+              <label class="switch">
+                <input (click)="toggleTheme()" id="themeToggler" type="checkbox"
+                  [checked]="theme === 'dark' ? false : true" />
+                <i class="ball"></i>
+                <span data-enabled="Light" data-disabled="Dark"></span>
+              </label>
+            </div>
+          </div> -->
+        </div>
+        <div class="bottom">
+          <div class="bottom">
+            <button [routerLink]="'/configuration/user-preferences'" type="button" class="btn big">
+              <i class="fa-regular fa-user"></i> User Preferences
+            </button>
+          </div>
+          <div class="content">
+            <button *ngIf="isAuthenticated()" (click)="signOut()" type="button" class="btn big">
+              <i class="fa-solid fa-right-from-bracket"></i> Sign out
+            </button>
+          </div>
+          <div class="content">
+            <button *ngIf="!isAuthenticated()" (click)="signIn()" type="button" class="btn big">
+              <i class="fa-solid fa-right-from-bracket"></i> Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- System panel: Notification log -->
+  <div class="notification-log">
+    <div class="syspanel-top">
+      <span class="syspanel-title">Notifications</span>
+      <span class="tooltip">
+        <i class="fa-solid fa-trash " (click)="clearNotificationLog()"></i><span
+          class="message left">Clear notifications</span>
+      </span>
+      <i class="fa-solid fa-xmark" (click)="toogleSysPanel()"></i>
+    </div>
+    <div class="notification-log-container">
+      <div class="notification-log-empty">No new notifications.</div>
+    </div>
+  </div>
+</aside>

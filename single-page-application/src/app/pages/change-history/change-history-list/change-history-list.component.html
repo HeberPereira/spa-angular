@@ -1,0 +1,9 @@
+<app-list-v2
+  [resourceName]="'Change History'"
+  [service]="changeHistoryService"
+  [dataSourceList]="dataSource"
+  [tableColumns]="tableColumns"
+  (editButtonEmitter)="editTableRow($event)"
+  (onDataChange)="onDataChange($event)"
+  #listaMinha
+></app-list-v2>

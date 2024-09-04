@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="col-lg-1" *ngIf="this.totalrecords > 0">
+        <button  id="first" class="btn" (click)="firstPage()" tooltip="First"><i class="icon icon-step-back"></i></button>
+        <button  id="back" class="btn" (click)="backPage()" tooltip="Back"> <i class="icon icon-chevron-left"></i></button>
+        <button class="btn" *ngFor="let n of this.totalpages" id={{n}} (click)="alterPage(n)">{{n}}</button>
+        <button  id="next" class="btn" (click)="nextPage()"><i class="icon icon-chevron-right"></i></button>
+        <button  id="last" class="btn" (click)="lastPage()"><i class="icon icon-step-forward"></i></button>
+
+        <span style="float: right!important;"> Number of Records: {{this._totalrecords}} |
+            Page Size:
+            <select style="float: right;" class="form-control"
+                (change)="alterPageSize($event.target.value)">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.select {
+    width:100%;
+}
+
+#ad-group-select-customer {
+    width: auto;
+}
+
+#ad-group-option-list {
+    width: auto;
+    max-width: none;
+}
+
+.options-list{
+    position: fixed !important;    
+    max-width: 200px;
+}
+
+.select.open-top .options-list{
+    bottom: auto ;
+}

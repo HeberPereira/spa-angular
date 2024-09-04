@@ -1,0 +1,23 @@
+<div class="table-top">
+  <div class="table-top-left">
+    <div class="table-info"></div>
+  </div>
+  <div class="table-top-right">
+    <ng-content select="[tableButtons]"></ng-content>
+    <div class="table-actions">
+      <button class="btn-icon table-settings" id="{{this.id}}-settings2" title="Manage columns">
+        <i class="icon icon-settings"></i>
+
+      </button>
+    </div>
+  </div>
+
+</div>
+<table id="{{this.id}}-table" class="table">
+  <tr *ngIf="isLoading">
+    <td colspan="100">
+      <div class="loading large" style="margin: 0 auto"></div>
+    </td>
+  </tr>
+</table>
+

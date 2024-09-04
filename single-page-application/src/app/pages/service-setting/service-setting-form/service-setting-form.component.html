@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off" class="eds-form" [formGroup]="serviceSettingForm">
+  <div class="form-body">
+    <div class="form-group">
+      <div class="loadForm"></div>
+      <div *ngFor="let formField of formFields" class="form-group">
+        <div class="form-element">
+          <label> {{ formField.name }}</label>
+          <input class="form-control" id="{{ formField.id }}" type="{{ formField.type == 'Int32' ? 'number':'text' }}"
+            value="{{ formField.value }}" formControlName="{{ formField.id }}" />
+        </div>
+      </div>
+
+      <div *ngFor="let formField of formFieldsCheck" class="form-group">
+        <div class="form-element">
+          <input class="form-control" type="checkbox" id="{{ formField.id }}" formControlName="{{ formField.id }}">
+          <label for="{{formField.id}}">{{formField.name}}</label>
+        </div>
+      </div>
+
+      <div *ngFor="let formField of formFieldsDate" class="form-group">
+        <div class="form-element">
+          <label for="{{formField.id}}">{{formField.name}}</label>
+          <input formControlName="{{ formField.id }}"  type="time" id="{{ formField.id }}"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="form-footer">
+
+    <button class="btn primary" type="submit" [disabled]="!serviceSettingForm.valid">
+      Save
+    </button>
+  </div>
+</form>

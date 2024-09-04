@@ -1,0 +1,13 @@
+
+aa
+<app-list-v2
+  [resourceName]="'Privacy Policy'"
+  [service]="privacyPolicyService"
+  [dataSourceList]="dataSource"
+  [tableColumns]="tableColumns"
+  (editButtonEmitter)="editTableRow($event)"
+  (addButtonEmitter)="addTableRow()"
+  (onDataChange)="onDataChange($event)"
+
+  #listaMinha
+></app-list-v2>

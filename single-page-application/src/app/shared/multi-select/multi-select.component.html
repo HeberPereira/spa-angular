@@ -1,0 +1,14 @@
+<div class="select" [attr.data-type]="selectType" [id]="selectID">
+  <button [disabled]="isDisabled" (click)="$event.preventDefault()" class="btn current-options">
+    Select {{ resourceName }}
+  </button>
+  <div class="options-list" *ngIf="data?.length > 0">
+    <div
+      *ngFor="let resource of data"
+      #option
+      attr.data-id="{{ resource[key] }}"
+      attr.data-value="{{ resource[label] }}"
+      class="item {{ isSelected(resource.id) ? 'active' : '' }}"
+    >{{ resource[label] }}</div>
+  </div>
+</div>

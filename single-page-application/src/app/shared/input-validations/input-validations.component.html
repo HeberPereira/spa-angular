@@ -1,0 +1,29 @@
+<div *ngIf="control?.invalid && (control?.touched)">
+  <span class="validation-msg" *ngIf="control?.hasError('whitespace')">
+    {{ customMessages?.whitespace || 'Blank spaces are not allowed' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('required')">
+    {{ customMessages?.required || 'This input is required' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('specials')">
+    {{ customMessages?.specials || 'Specials and latin characters are not allowed' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('onlyNumbers')">
+    {{ customMessages?.onlyNumbers || 'Only numbers are allowed' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('noNumbers')">
+    {{ customMessages?.noOnlyNumbers || 'Numbers are not allowed' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('ip')">
+    {{ customMessages?.ip || 'IP is invalid' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('phone')">
+    {{ customMessages?.phone || 'Phone is invalid' }}
+  </span>
+  <span class="validation-msg" *ngIf="control?.hasError('maxlength')">
+    {{
+      customMessages?.maxlength ||
+        'Max length for this input is ' + inputMaxLength + ' characters'
+    }}
+  </span>
+</div>

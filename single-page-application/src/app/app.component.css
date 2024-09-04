@@ -1,0 +1,221 @@
+.dark label.required:after,
+.light label.required:after {
+    content: '*';
+    color: #008cff;
+    margin-left: 4px;
+}
+
+.dark .validation-msg, 
+.light .validation-msg {
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.dark .validation-msg::before, 
+.light .validation-msg::before {
+    content: "\e9b2";
+    font-family: "Ericsson Icons";
+    display: inline;
+    margin-right: 4px;
+    color: #dc2d37;
+}
+
+.dark input.validation:invalid,
+.light input.validation:invalid {
+    border: 1px solid #dc2d37;
+    margin-bottom: 4px;
+    box-shadow: none;
+}
+
+.dark input[type=checkbox],
+.light input[type=checkbox] {
+    display: none; /*fix position in tables*/
+}
+
+.large-padding {
+    padding: 16px;
+}
+
+.circle-green {
+    background-color: #288964;
+    padding: 5px;
+    border-radius: 8px;
+    padding-left: 4px;
+}
+
+.circle-red {
+    background-color: #DC2D37;
+    padding: 5px;
+    border-radius: 8px;
+    padding-left: 4px;
+}
+
+.dark hr {
+    /* border: 1px solid #767676; */
+    margin-bottom: 16px;
+}
+.light hr {
+    /* border: 1px solid #878787; */
+    margin-bottom: 16px;
+}
+
+.dark .tile .content .box,
+.light .tile .content .box {
+    padding: 16px 16px 8px 16px;
+    min-height: auto;
+}
+
+/* Horizontal Filters */
+.dark .eds-filter.horizontal,
+.light .eds-filter.horizontal {
+    margin-bottom: 16px;
+}
+.dark .eds-filter.horizontal .filter-group,
+.light .eds-filter.horizontal .filter-group {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 8px;
+}
+.dark .eds-filter .filter-group,
+.light .eds-filter .filter-group {
+    margin-bottom: 16px;
+}
+.dark .eds-filter.horizontal .filter-element,
+.light .eds-filter.horizontal .filter-element {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    margin-right: 8px;
+}
+
+.dark .eds-filter .filter-element:first-child,
+.light .eds-filter .filter-element:first-child {
+    margin-top: 0;
+}
+.dark .eds-filter .filter-element,
+.light .eds-filter .filter-element {
+    margin-top: 8px;
+    min-width: 125px;
+}
+
+.dark .eds-filter.horizontal .filter-element>input[type=checkbox]+label, 
+.dark .eds-filter.horizontal .filter-element>input[type=radio]+label,
+.light .eds-filter.horizontal .filter-element>input[type=checkbox]+label, 
+.light .eds-filter.horizontal .filter-element>input[type=radio]+label {
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+.dark .eds-filter.eds-filter.horizontal .filter-element .select,
+.light .eds-filter.eds-filter.horizontal .filter-element .select {
+    width: 100%;
+}
+
+.light .eds-filter.eds-filter.horizontal .filter-element .select .btn:not(:disabled) {
+    background-color: white;
+}
+.light .eds-filter.eds-filter.horizontal .filter-element .select .btn:hover:not(:disabled) {
+    background-color: #4e4e4e;
+}
+
+.dark .eds-filter.horizontal .filter-footer,
+.light .eds-filter.horizontal .filter-footer {
+    padding-top: 0;
+    padding-right: 16px;
+}
+.dark .eds-filter .filter-footer,
+.light .eds-filter .filter-footer {
+    padding-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/** Dropdown button **/
+.light .dropdown .btn,
+.dark .dropdown .btn {
+    font-size: 14px;
+    padding: 5px 24px 4px 12px;
+}
+
+.light .table-top .table-buttons .dropdown,
+.dark .table-top .table-buttons .dropdown {
+    /* margin-right: 8px; */
+    margin-left: 8px;
+}
+
+.dark .dropdown~.btn {
+    margin-left: 8px;
+}
+
+/** empty state **/
+.empty-state {
+    border: 1px solid gray;
+}
+
+/** Wizard additional content **/
+.wizard-content-submit-feedback .loading {
+    margin: 0 auto 32px auto;
+}
+.wizard-content-submit-feedback.hidden {
+    display: none;
+}
+
+/** loading permissions feedback **/
+.light .tree .title.loading-title:not(.opened)::before {
+    content: "\e932";
+    font-family: "Ericsson Icons"!important;
+    animation: rotateAnimation 2s infinite ease-in-out;
+    position: absolute;
+}
+
+.table.selectable .subtable th:first-child,
+.table.selectable .subtable td:first-child{
+    max-width: none !important;
+    width: auto !important;
+    padding-right: 16px !important;
+    min-width: 0px !important;
+}
+
+.loading-panel-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 74vh;
+}
+
+.isLoading {
+    display: none;
+}
+
+.actions-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+}
+
+.actions-container > span {
+    margin-bottom: 8px;
+}
+
+/*Removing hover and click from edit column name in Manage Coluns*/
+.light div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable,
+.dark div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable {
+    pointer-events: none;
+}
+
+.light div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable:hover,
+.dark div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable:hover {
+    pointer-events: none;
+}
+
+.light div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable:after,
+.dark div.table-settings > div.content > div.body > div.drop-area > div.card > div.header > div.left > div.title > span.editable:after {
+    content: none;
+}
